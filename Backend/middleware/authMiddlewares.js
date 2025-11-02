@@ -1,6 +1,6 @@
 
 const jwt = require('jsonwebtoken');
-const userModel = require('../../models/userModel');
+const userModel = require('../models/userModel');
 
 // Middleware to protect routes
 async function Authenticated(req, res, next) {

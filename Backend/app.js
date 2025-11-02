@@ -8,7 +8,7 @@ const passport = require('./config/passport');
 const userRouter = require('./routes/userRoutes')
 const productRouter = require('./routes/productRoutes')
 const expressSession = require('express-session');
-const passport = require('passport');
+
 const cookieParser = require('cookie-parser');
 const cartRouter = require('./routes/CartRoutes')
 const Razorpay = require('razorpay');
@@ -30,7 +30,9 @@ app.use(passport.session());
 app.use(cookieParser());
 
 
-
+app.get('/', (req, res) => {
+  res.status(200).send('Welcome to the E-commerce Backend API!');
+});
 
 //  Router
 app.use('/api/auth',userRouter);
